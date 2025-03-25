@@ -14,7 +14,7 @@ class StringsExportPluginTest {
     @Test fun `plugin registers task`() {
         // Create a test project and apply the plugin
         val project = ProjectBuilder.builder().build()
-        project.plugins.apply("org.example.greeting")
+        project.plugins.apply("com.yass.strings.export")
 
         // Verify the result
         assertNotNull(project.tasks.findByName("greeting"))
