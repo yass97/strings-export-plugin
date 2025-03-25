@@ -28,7 +28,7 @@ dependencies {
 gradlePlugin {
     // Define the plugin
     val greeting by plugins.creating {
-        id = "org.example.greeting"
+        id = "com.yass.strings.export"
         implementationClass = "org.example.StringsExportPluginPlugin"
     }
 }
