@@ -25,7 +25,7 @@ class StringsExportPluginFunctionalTest {
         settingsFile.writeText("")
         buildFile.writeText("""
             plugins {
-                id('org.example.greeting')
+                id('com.yass.strings.export')
             }
         """.trimIndent())
 
