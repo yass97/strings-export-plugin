@@ -29,7 +29,7 @@ gradlePlugin {
     // Define the plugin
     val greeting by plugins.creating {
         id = "com.yass.strings.export"
-        implementationClass = "org.example.StringsExportPluginPlugin"
+        implementationClass = "org.example.StringsExportPlugin"
     }
 }
 

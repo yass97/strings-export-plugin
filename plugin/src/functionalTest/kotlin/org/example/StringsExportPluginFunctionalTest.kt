@@ -12,7 +12,7 @@ import org.junit.jupiter.api.io.TempDir
 /**
  * A simple functional test for the 'org.example.greeting' plugin.
  */
-class StringsExportPluginPluginFunctionalTest {
+class StringsExportPluginFunctionalTest {
 
     @field:TempDir
     lateinit var projectDir: File
