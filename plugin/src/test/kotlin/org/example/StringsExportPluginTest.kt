@@ -17,6 +17,6 @@ class StringsExportPluginTest {
         project.plugins.apply("com.yass.strings.export")
 
         // Verify the result
-        assertNotNull(project.tasks.findByName("greeting"))
+        assertNotNull(project.tasks.findByName("exportStrings"))
     }
 }

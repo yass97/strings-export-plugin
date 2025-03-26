@@ -3,19 +3,17 @@
  */
 package org.example
 
-import org.gradle.api.Project
 import org.gradle.api.Plugin
+import org.gradle.api.Project
 
 /**
  * A simple 'hello world' plugin.
  */
-class StringsExportPlugin: Plugin<Project> {
+class StringsExportPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         // Register a task
-        project.tasks.register("greeting") { task ->
-            task.doLast {
-                println("Hello from plugin 'org.example.greeting'")
-            }
+        project.tasks.register("exportStrings", StringsExportTask::class.java) {
+            it.group = "Strings resource export tasks"
         }
     }
 }
