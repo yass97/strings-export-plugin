@@ -1,4 +1,4 @@
-package org.example
+package io.github
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

@@ -1,4 +1,4 @@
-package org.example
+package io.github
 
 import org.gradle.testkit.runner.GradleRunner
 import org.junit.jupiter.api.io.TempDir

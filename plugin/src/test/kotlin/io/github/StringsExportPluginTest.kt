@@ -1,4 +1,4 @@
-package org.example
+package io.github
 
 import org.gradle.testfixtures.ProjectBuilder
 import kotlin.test.Test

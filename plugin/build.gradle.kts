@@ -1,7 +1,11 @@
 plugins {
     `java-gradle-plugin`
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.plugin.publish)
 }
+
+group = "io.github.yass97"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -13,9 +17,14 @@ dependencies {
 }
 
 gradlePlugin {
-    val greeting by plugins.creating {
-        id = "com.yass.strings.export"
-        implementationClass = "org.example.StringsExportPlugin"
+    website = "https://github.com/yass97/strings-export-plugin"
+    vcsUrl = "https://github.com/yass97/strings-export-plugin.git"
+    val stringsExportPlugin by plugins.creating {
+        id = "io.github.yass97.strings.export"
+        implementationClass = "io.github.StringsExportPlugin"
+        displayName = "Plugin for export a list of string resources"
+        description = "Exports string resource IDs and their values in a tab-separated format."
+        tags = listOf("export", "strings")
     }
 }
 

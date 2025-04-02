@@ -1,4 +1,4 @@
-package org.example
+package io.github
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
