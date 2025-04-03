@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'feature/**'
+
+env:
+  JAVA_DISTRIBUTION: 'zulu'
+  JAVA_VERSION: '17'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: Run tests
+        run: ./gradlew plugin:test plugin:functionalTest
