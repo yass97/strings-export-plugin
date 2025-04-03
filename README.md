@@ -19,7 +19,7 @@ pluginManagement {
 > build.gradle.kts
 ```kotlin
 plugins {
-    id("io.github.yass97.strings.export") version "1.0.0"
+    id("io.github.yass97.strings.export") version "1.0.1"
 }
 ```
 
