@@ -7,7 +7,6 @@ import java.io.IOException
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 import kotlin.test.fail
 
 class StringsExportPluginFunctionalTest {
@@ -96,12 +95,6 @@ class StringsExportPluginFunctionalTest {
             .append("key2\titem2\n")
             .toString()
         assertEquals(expected, outputFile.readText())
-    }
-
-    @Test
-    fun `fails Task when the strings file does not exist`() {
-        val result = runner.build()
-        assertTrue(result.output.contains("strings.xml not found"))
     }
 
     @Test

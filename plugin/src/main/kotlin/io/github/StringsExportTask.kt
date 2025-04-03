@@ -1,14 +1,22 @@
 package io.github
 
 import org.gradle.api.DefaultTask
+import org.gradle.api.file.RegularFileProperty
+import org.gradle.api.tasks.InputFile
+import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
-import java.io.File
 import javax.xml.parsers.DocumentBuilderFactory
 
 abstract class StringsExportTask : DefaultTask() {
+    @get:InputFile
+    abstract val inputFile: RegularFileProperty
+
+    @get:OutputFile
+    abstract val outputFile: RegularFileProperty
+
     @TaskAction
     fun exportStrings() {
-        val stringsXml = File("${project.projectDir}/src/main/res/values/strings.xml")
+        val stringsXml = inputFile.get().asFile
         if (!stringsXml.exists()) {
             logger.error("strings.xml not found")
             return
@@ -42,7 +50,7 @@ abstract class StringsExportTask : DefaultTask() {
             }
         }
 
-        val output = File(project.layout.buildDirectory.get().asFile, "strings-export.tsv")
+        val output = outputFile.get().asFile
         output.parentFile.mkdirs()
         output.writeText(result.toString())
 
