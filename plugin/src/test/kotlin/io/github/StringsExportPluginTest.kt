@@ -7,7 +7,7 @@ import kotlin.test.assertNotNull
 class StringsExportPluginTest {
     @Test fun `plugin registers task`() {
         val project = ProjectBuilder.builder().build()
-        project.plugins.apply("com.yass.strings.export")
+        project.plugins.apply("io.github.yass97.strings.export")
 
         assertNotNull(project.tasks.findByName("exportStrings"))
     }
