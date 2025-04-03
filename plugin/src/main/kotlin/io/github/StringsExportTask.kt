@@ -26,7 +26,6 @@ abstract class StringsExportTask : DefaultTask() {
             val value = node.textContent
                 .replace(Regex("[\\r\\n\\s]"), "")
                 .trim()
-            println("value=$value")
             result.append("$name\t$value\n")
         }
 
